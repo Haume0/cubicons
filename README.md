@@ -1,4 +1,4 @@
-# ✨public-folder-icons
+# ✨Cubicons
 A component that allows you to use svg files in the public folder as icons with file names.
 
 I'll make for React and Svelte soon...

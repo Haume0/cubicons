@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import Cubicon from './components/cubicon.vue';
+import Cubicon from './components/Icon.vue'
 </script>
 
 <template>

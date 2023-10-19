@@ -3,7 +3,7 @@ import { ref } from 'vue';
 let p = defineProps(["name", "class", "width", "height"]) // Props  (name, class, width, height)
 
 let i: any = ref("") // Icon variable
-let electron:boolean = true // if you're using this component in electron you must set this variable to true
+let electron:boolean = false // if you're using this component in electron you must set this variable to true
 async function get() {
     let uri = `/${p.name}.svg`
     if(electron){

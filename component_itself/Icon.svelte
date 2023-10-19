@@ -2,7 +2,7 @@
 export let name,width,height
 
 let i: any = "" // Icon variable
-let electron:boolean = true // if you're using this component in electron you must set this variable to true
+let electron:boolean = false // if you're using this component in electron you must set this variable to true
 async function get() {
     let uri = `/${p.name}.svg`
     if(electron){

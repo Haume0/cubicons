@@ -2,8 +2,14 @@
 export let name,width,height
 
 let i: any = "" // Icon variable
+let electron:boolean = true // if you're using this component in electron you must set this variable to true
 async function get() {
-    let a = await fetch(`/${name}.svg`) // Fetching svg file
+    let uri = `/${p.name}.svg`
+    if(electron){
+        const local = window.location.href.replace("index.html", "")
+        uri = local + uri
+    }
+    let a = await fetch(uri) // Fetching svg file
     if (!a.ok) return
     let b = await a.text() // Converting svg file to text
     b = b.toString() // Converting svg file to string

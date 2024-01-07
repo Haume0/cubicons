@@ -3,10 +3,10 @@ import { ref } from 'vue';
 let p = defineProps(["name", "class", "width", "height"]) // Props  (name, class, width, height)
 
 let i: any = ref("") // Icon variable
-let electron:boolean = false // if you're using this component in electron you must set this variable to true
+let local:boolean = false // if you're using this component in electron like frameworks you must set this variable to true
 async function get() {
     let uri = `/${p.name}.svg`
-    if(electron){
+    if(local){
         const local = window.location.href.replace("index.html", "")
         uri = local + uri
     }
@@ -29,11 +29,11 @@ get() // Calling get function
 </script>
 
 <template>
-    <cubicon :class="p.class" v-if="i != ''" v-html="i"></cubicon>
+    <div id="cubicon" :class="p.class" v-if="i != ''" v-html="i"></div>
 </template>
 
 <style scoped>
-cubicon { /* Core css rules */
+#cubicon { /* Core css rules */
     display: flex;
     justify-content: center;
     flex-shrink: 0;

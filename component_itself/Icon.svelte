@@ -2,10 +2,10 @@
 export let name,width,height
 
 let i: any = "" // Icon variable
-let electron:boolean = false // if you're using this component in electron you must set this variable to true
+let local:boolean = false // if you're using this component in electron like frameworks you must set this variable to true
 async function get() {
-    let uri = `/${p.name}.svg`
-    if(electron){
+    let uri = `/${name}.svg`
+    if(local){
         const local = window.location.href.replace("index.html", "")
         uri = local + uri
     }
